@@ -41,5 +41,7 @@ def le_frentistas(arquivo):
             'bonus' : 0
         }
     return frentistas
-    
-print(le_frentistas('frentistas.csv'))
+
+if __name__ == '__main__':    # Somente executa se o arquivo for chamado diretamente
+    print(le_frentistas('frentistas.csv'))
+    le_combustiveis('combustiveis.csv')
