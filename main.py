@@ -11,7 +11,6 @@ salarioFixo = float(input('Digite o salario fixo do frentista: '))
 
 postoDados = pt.cadastro_posto(nomePosto, salarioFixo, combustiveis, frentistas)
 
-#pt.abastecer('Renan', 'gasolina', 300, postoDados)
 
 def operacao(op, postoDados):
     if op == 1: #abastecer
@@ -25,18 +24,21 @@ def operacao(op, postoDados):
             return 'O posto ja esta bloqueado!'
         else:
             postoDados['bloqueado'] = True
-            return 'O posto foi desbloqueado!'
+            return 'O posto acaba de ser bloqueado!'
     elif op == 3:
         if not postoDados['bloqueado']:
-            return 'O posto ja esta bloqueado!'
+            return 'O posto ja esta desbloqueado!'
         else:
             postoDados['bloqueado'] = False
-            return 'O posto foi bloqueado!'
+            return 'O posto acaba de ser desbloqueado!'
     elif op == 4:
         relatorio('relatorio 01',postoDados) 
 
+nome_relatorio = 'relatorio 01'
+
 while True: 
     le_txt('dialogo.txt')
+
     try: 
         op = int(input('Digite o numero da operação que deseja realizar: '))
     except: 
@@ -45,5 +47,6 @@ while True:
         break
     
     resposta = operacao(op, postoDados)
-    print(resposta, postoDados)
+    print(resposta)
+    
 print('Sistema encerrado!')
