@@ -20,6 +20,10 @@ combustivel = {
 
 import pandas as pd
 
+def le_txt(arquivo):
+    with open(arquivo, 'r') as file:
+        print(file.read())
+
 def le_combustiveis(arquivo):
     combustiveis = {}
     dados_combustiveis = pd.read_csv(arquivo)
