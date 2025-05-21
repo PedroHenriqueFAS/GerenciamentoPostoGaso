@@ -1,7 +1,3 @@
-from dados import*
-
-combustiveis = le_combustiveis('combustiveis.csv')
-frentista = le_frentistas('frentistas.csv')
 
 '''
 combustivel = {
@@ -16,11 +12,11 @@ combustivel = {
 }
 '''
 
-def cadastro_posto(nome_posto, salario_fixo, combustiveis=combustiveis, frentista=frentista):
+def cadastro_posto(nome_posto, salario_fixo, combustiveis, frentistas):
     posto_dados = {
         'nome' : nome_posto,
         'combustiveis' : combustiveis,
-        'frentistas': frentista,
+        'frentistas': frentistas,
         'faturamento' : 0,
         'bloqueado' : False,
         'salario_fixo' : salario_fixo
@@ -34,13 +30,13 @@ def consumo(valor, combustivel, posto_dados):
     if combustivel['volume'] < 0:
         return False
     else:
-        return float (f'{consumido["volume"]:.3f}')
+        return float(f'{combustivel["volume"]:.3f}')
 
 def abastecer(frentistas, combustivel, valor,posto_dados):
     posto_dados['frentistas'][frentistas]['numero_vendas']=+1
-    posto_dados['combustiveis'][combustiveis]['volume'] = consumo(valor, combustivel, posto_dados)
+    posto_dados['combustiveis'][combustivel]['volume'] = consumo(valor, combustivel, posto_dados)
     
-    if not posto_dados['combustiveis'][combustiveis]['volume'] == False:
+    if not posto_dados['combustiveis'][combustivel]['volume'] == False:
         posto_dados['faturamento']+= valor
     else:
         return 'Nao foi possivel abastecer'
