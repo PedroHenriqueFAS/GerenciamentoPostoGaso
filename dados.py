@@ -46,6 +46,11 @@ def le_frentistas(arquivo):
         }
     return frentistas
 
+def relatorio(nome, posto_dados):
+    nome += '.txt'
+    with open(nome, 'w+') as file:
+        file.write(f'Relatorio do posto {posto_dados["nome"]}')
+
 if __name__ == '__main__':    # Somente executa se o arquivo for chamado diretamente
     print(le_frentistas('frentistas.csv'))
     le_combustiveis('combustiveis.csv')
