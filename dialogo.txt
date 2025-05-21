@@ -3,7 +3,9 @@
 
 2- Bloquear posto
 
-3- Gerar Relatorio
+3 - Desbloquear posto
 
-4- Fechar Posto
+4- Gerar Relatorio
+
+5- Fechar Posto
 
