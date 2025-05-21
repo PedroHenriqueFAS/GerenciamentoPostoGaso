@@ -1,0 +1,47 @@
+Relatorio do posto Amorim
+
+Combustiveis:
+Tipo: gasolina
+
+Disponivel: 200
+
+Preco atual: 5.7
+
+Tipo: etanol
+
+Disponivel: 500
+
+Preco atual: 4.7
+
+Frentistas:
+Nome: Marcus
+
+ - Bonus: 0
+
+Nome: Renan
+
+ - Bonus: 0
+
+Nome: Igor
+
+ - Bonus: 0
+
+Nome: Andrea
+
+ - Bonus: 0
+
+Nome: Valeria
+
+ - Bonus: 0
+
+Nome: Lucas
+
+ - Bonus: 0
+
+Nome: Caio
+
+ - Bonus: 0
+
+Faturamento total: 0
+
+Criado em: 2025-05-21 00:26:44.778316
