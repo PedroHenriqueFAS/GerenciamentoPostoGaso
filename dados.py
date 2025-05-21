@@ -17,7 +17,7 @@ combustivel = {
 #     'bonus' : 0
 #     },
 # }
-
+import datetime as dt
 import pandas as pd
 
 def le_txt(arquivo):
@@ -49,7 +49,23 @@ def le_frentistas(arquivo):
 def relatorio(nome, posto_dados):
     nome += '.txt'
     with open(nome, 'w+') as file:
-        file.write(f'Relatorio do posto {posto_dados["nome"]}')
+        file.write(f'Relatorio do posto {posto_dados["nome"]}\n\n')
+        
+        file.write('Combustiveis:\n')
+        for combustivel in posto_dados['combustiveis'].items():
+            file.write(f'Tipo: {combustivel[0]}\n\n')
+            file.write(f"Disponivel: {combustivel[1]['volume']}\n\n")
+            file.write(f"Preco atual: {combustivel[1]['preco']}\n\n")
+        
+        file.write('Frentistas:\n')
+        for frentista in posto_dados['frentistas'].items():
+            file.write(f'Nome: {frentista[0]}\n\n')
+            file.write(f" - Bonus: {frentista[1]['bonus']}\n\n")
+            
+        file.write(f'Faturamento total: {posto_dados["faturamento"]}\n\n')
+        
+        file.write(f'Criado em: {dt.datetime.now()}')
+        
 
 if __name__ == '__main__':    # Somente executa se o arquivo for chamado diretamente
     print(le_frentistas('frentistas.csv'))
